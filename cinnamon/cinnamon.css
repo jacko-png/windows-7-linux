@@ -1775,6 +1775,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   transition-duration: 200;
   color: #FFF;
   max-width: 134px;
+  min-width: 20px;
 }
 
 /* normal */
@@ -1782,6 +1783,8 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   font-weight: normal;
   font-size: 9pt;
   border-image: url("panel-assets/item-normal.png") 4;
+  margin: 64px;
+  min-width: 20px;
 }
 
 .window-list-item-box:hover  {
@@ -1818,6 +1821,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
   font-weight: normal;
   border-image: none;
   transition-duration: 100;
+  margin: 0px 18px;
 }
 
 .grouped-window-list-item-box:hover {
@@ -1827,6 +1831,7 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 .grouped-window-list-item-box:active,
 .grouped-window-list-item-box:checked {
   border-image: url("panel-assets/item-normal.png") 4;
+
 }
 
 .grouped-window-list-item-box:active:hover,
@@ -2001,12 +2006,12 @@ height of the table to be ICON_SIZE + IMAGE_SIZE + spacing-rows = 24 + 125 + 10 
 * ===================================================================*/
 
 #panel-launchers-box {
+  padding-left: 50px;
 
 }
 
 .panel-launcher {
-  margin: 1px;
-  padding: 3px;
+  padding: 20px;
   border: 1px solid transparent;
 }
 
