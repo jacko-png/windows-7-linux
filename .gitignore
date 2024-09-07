@@ -1,4 +1,4 @@
-/**/.DS_Store
 # unwanted large files go here
-/test/log/bigfile
-/build
+# keep build and bigfile in the tree but exclude contents
+/test/log/bigfile/**
+/build/**
