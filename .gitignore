@@ -1,0 +1,4 @@
+/**/.DS_Store
+# unwanted large files go here
+/test/log/bigfile
+/build
