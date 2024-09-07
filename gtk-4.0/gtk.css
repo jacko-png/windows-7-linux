@@ -652,6 +652,43 @@ button.suggested-action {
   button.suggested-action:backdrop {
     color: #000000; }
 
+modelbutton {
+  min-height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none; }
+  modelbutton:hover {
+    color: #000000;
+    background-color: #CCE8FF;
+    background-image: linear-gradient(to bottom, #d5ecff, #c3e4fe);
+    box-shadow: inset 0 0 0 1px #90c8f6; }
+  modelbutton:selected {
+    color: #000000;
+    background-color: #CCE8FF;
+    background-image: linear-gradient(to bottom, #d5ecff, #c3e4fe);
+    box-shadow: inset 0 0 0 1px #90c8f6; }
+  modelbutton:disabled {
+    color: #787878; }
+  modelbutton > image {
+    padding-right: 4px; }
+  modelbutton arrow {
+    background: none;
+    min-width: 16px;
+    min-height: 16px;
+    opacity: 0.3; }
+    modelbutton arrow:hover {
+      background: none; }
+    modelbutton arrow:disabled {
+      opacity: 0.15; }
+    modelbutton arrow.left {
+      -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
+    modelbutton arrow.right {
+      -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
+
 button.link,
 link {
   color: #224BA0;
@@ -794,12 +831,14 @@ toolbar,
     border: 1px solid transparent;
     background-color: transparent;
     background-image: none;
+    background-color: transparent;
+    border: 1px solid transparent;
     box-shadow: none; }
     toolbar button:hover,
     .toolbar button:hover {
       border-color: #b4b4b4;
-      background-color: transparent;
       background-image: none;
+      background-color: transparent;
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6); }
 
 searchbar {
@@ -892,8 +931,8 @@ infobar .close {
     background-color: rgba(0, 0, 0, 0.05); }
 
 headerbar {
-  min-height: 30px;
   padding: 4px 8px;
+  min-height: 30px;
   color: #000000;
   background-color: #E8ECF6;
   background-image: linear-gradient(to bottom, #9ab9e0, #cddef4);
@@ -1164,7 +1203,7 @@ columnview.view > header > button, treeview.view > header > button, columnview.v
   columnview.view > header > button:last-child, treeview.view > header > button:last-child {
     border-right-style: none; }
 
-popover.background, popover.background:backdrop {
+popover.background {
   font: initial;
   background-color: transparent; }
 
@@ -1174,9 +1213,10 @@ popover > contents {
   color: #000000;
   background-color: #F0F0F0;
   background-clip: padding-box;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.45), inset 0px 0px 0px 2px #f3f3f3; }
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); }
 
 popover > contents {
+  padding: 8px;
   border-radius: 0px; }
   popover > contents > list,
   popover > contents > .view,
@@ -1191,56 +1231,35 @@ popover > contents {
 magnifier {
   background-color: #FFFFFF; }
 
-popover.menu > contents {
-  min-width: 120px;
-  padding: 2px; }
-
-popover.menu box.inline-buttons {
-  padding: 0px 4px; }
-
-popover.menu modelbutton {
-  min-height: 20px;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-radius: 3px;
-  border: 1px solid transparent;
-  background-color: transparent;
-  background-image: none;
-  box-shadow: none; }
-  popover.menu modelbutton:hover, popover.menu modelbutton:selected {
-    border-color: #a3d3fa;
-    color: #000000;
-    background-color: white;
-    background-image: linear-gradient(to bottom, #e8f4ff, #d5ecff); }
-  popover.menu modelbutton:disabled {
-    color: #787878; }
-  popover.menu modelbutton > image {
-    padding-right: 4px; }
-  popover.menu modelbutton arrow {
-    background: none;
-    min-width: 16px;
+popover.menu menu, popover.menu .menu {
+  margin: 4px;
+  padding: 4px 0px;
+  border-radius: 0px;
+  border: none;
+  color: #000000;
+  background-color: #F0F0F0; }
+  popover.menu menu menuitem, popover.menu .menu menuitem {
     min-height: 16px;
-    opacity: 0.3; }
-    popover.menu modelbutton arrow:hover {
-      background: none; }
-    popover.menu modelbutton arrow:disabled {
-      opacity: 0.15; }
-    popover.menu modelbutton arrow.left {
-      -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-    popover.menu modelbutton arrow.right {
-      -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
-
-popover.menu separator {
-  margin: 6px 0; }
-
-popover.menu list separator {
-  margin: 0; }
-
-popover.menu popover.menu {
-  padding: 0 0 2px 0; }
-  popover.menu popover.menu > contents {
-    margin: 0;
-    border-radius: 0px; }
+    min-width: 40px;
+    padding: 4px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    color: #000000;
+    background-color: #F0F0F0; }
+    popover.menu menu menuitem:hover, popover.menu .menu menuitem:hover {
+      color: #000000;
+      border-color: #a3d3fa;
+      border-radius: 3px;
+      background-color: white;
+      background-image: linear-gradient(to bottom, #e8f4ff, #d5ecff); }
+    popover.menu menu menuitem:disabled, popover.menu .menu menuitem:disabled {
+      color: #787878; }
+    popover.menu menu menuitem accelerator, popover.menu .menu menuitem accelerator {
+      color: alpha(currentColor, 0.55); }
+      popover.menu menu menuitem accelerator:hover, popover.menu .menu menuitem accelerator:hover {
+        color: rgba(0, 0, 0, 0.8); }
+      popover.menu menu menuitem accelerator:disabled, popover.menu .menu menuitem accelerator:disabled {
+        color: #787878; }
 
 popover.menu accelerator {
   color: alpha(currentColor, 0.55); }
@@ -1268,8 +1287,7 @@ menubar {
     border-radius: 3px;
     border: 1px solid transparent;
     color: #000000;
-    background-color: transparent;
-    box-shadow: none; }
+    background-color: transparent; }
     menubar > item:selected {
       border-color: #a3d3fa;
       color: #000000;
@@ -1615,7 +1633,7 @@ checkbutton, radiobutton {
   outline-offset: 0; }
 
 check, radio {
-  margin: 0 4px;
+  margin: 4px;
   min-width: 14px;
   min-height: 14px;
   border: none;
@@ -1896,30 +1914,35 @@ progressbar {
   font-size: smaller;
   color: black; }
   progressbar > trough {
-    border-radius: 3px;
     border: 1px solid #7d7d7d;
+    border-radius: 3px;
+    background-image: linear-gradient(to bottom, white 20%, #c9cacb 65%, white 98%);
     box-shadow: inset -6px 0 4px 0 rgba(0, 0, 0, 0.08), inset 6px 0 4px 0 rgba(0, 0, 0, 0.08); }
     progressbar > trough:backdrop {
       background-color: #e4e4e4; }
   progressbar > trough > progress {
-    border-radius: 0px;
     border: none;
-    background-color: #06B025; }
+    border-radius: 0;
+    background-color: #06B025;
+    background: radial-gradient(farthest-side at left, rgba(0, 0, 0, 0.2), transparent) left no-repeat, radial-gradient(farthest-side at right, rgba(0, 0, 0, 0.2), transparent) right no-repeat, linear-gradient(to bottom, #cdffcd, #a6efb3 45%, #00d020 56%, #1ce233);
+    background-size: 40px 100%; }
     progressbar > trough > progress:backdrop {
       background-color: #06B025; }
   progressbar.vertical > trough {
-    background-image: linear-gradient(to right, white 20%, #c9cacb 65%, white 98%); }
+    border: 1px solid #7d7d7d;
+    border-radius: 3px;
+    background-image: linear-gradient(to right, white 20%, #c9cacb 65%, white 98%);
+    box-shadow: inset -6px 0 4px 0 rgba(0, 0, 0, 0.08), inset 6px 0 4px 0 rgba(0, 0, 0, 0.08); }
+    progressbar.vertical > trough:backdrop {
+      background-color: #e4e4e4; }
   progressbar.vertical > trough > progress {
     border: none;
     border-radius: 0;
     background-color: #06B025;
     background: radial-gradient(farthest-side at top, rgba(0, 0, 0, 0.2), transparent) top no-repeat, radial-gradient(farthest-side at bottom, rgba(0, 0, 0, 0.2), transparent) bottom no-repeat, linear-gradient(to right, #cdffcd, #a6efb3 45%, #00d020 56%, #1ce233);
     background-size: 100% 40px; }
-  progressbar.horizontal > trough {
-    background-image: linear-gradient(to bottom, white 20%, #c9cacb 65%, white 98%); }
-  progressbar.horizontal > trough > progress {
-    background: radial-gradient(farthest-side at left, rgba(0, 0, 0, 0.2), transparent) left no-repeat, radial-gradient(farthest-side at right, rgba(0, 0, 0, 0.2), transparent) right no-repeat, linear-gradient(to bottom, #cdffcd, #a6efb3 45%, #00d020 56%, #1ce233);
-    background-size: 40px 100%; }
+    progressbar.vertical > trough > progress:backdrop {
+      background-color: #06B025; }
   progressbar.horizontal > trough {
     min-width: 150px; }
   progressbar.vertical > trough {
@@ -2160,11 +2183,13 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
     border-spacing: 12px; }
 
 .app-notification {
-  margin: 5px;
   border: 1px solid #b4b4b4;
-  color: #000000;
   background-color: #FFFFFF;
-  padding: 8px; }
+  color: #000000;
+  padding: 8px;
+  margin: 5px; }
+  .app-notification border {
+    border: none; }
 
 expander {
   min-width: 16px;
@@ -2247,7 +2272,7 @@ window.dialog.message.csd.background {
 
 window.dialog.message.csd .dialog-action-area button {
   padding: 10px 14px;
-  border-radius: 0px;
+  border-radius: 0;
   border-left-style: solid;
   border-right-style: none;
   border-bottom-style: none; }
@@ -2587,7 +2612,7 @@ shortcut > .keycap {
   font-size: smaller; }
 
 stackswitcher > button.text-button {
-  min-width: 120px; }
+  min-width: 100px; }
 
 stackswitcher.circular {
   border-spacing: 12px; }
